@@ -1,15 +1,19 @@
-import Head from 'next/head'
-import Image from 'next/image'
+
 import Post from '../components/Post'
 
-export default function Home() {
+export function getStaticProps() {
+  return {
+    props: {
+      posts: []
+    }
+  }
+}
+
+export default function Home({ posts }) {
   return (
     <div>
-      <Head>
-
-      </Head>
-      
-      <Post />
+      <h1>Hello test</h1>
+      <pre>{JSON.stringify(posts, null, 2)}</pre>
     </div>
   )
 }
